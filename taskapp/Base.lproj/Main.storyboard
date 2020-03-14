@@ -136,7 +136,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="eL5-iq-qYb"/>
                     <connections>
-                        <outlet property="contetsTextField" destination="pH1-qG-dvh" id="YQ3-9V-Lk6"/>
+                        <outlet property="contentsTextView" destination="pH1-qG-dvh" id="Nso-10-iG6"/>
                         <outlet property="datePicker" destination="Lyx-HR-Pr2" id="qcq-5Y-bv6"/>
                         <outlet property="titleTextField" destination="COJ-2l-T1m" id="4Rr-lo-jz7"/>
                     </connections>

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		DB76518D2417C0E0004FF06A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB76518C2417C0E0004FF06A /* Assets.xcassets */; };
 		DB7651902417C0E0004FF06A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB76518E2417C0E0004FF06A /* LaunchScreen.storyboard */; };
 		DB7651A82418FA5A004FF06A /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7651A72418FA5A004FF06A /* InputViewController.swift */; };
+		DB7651AA241A5DBB004FF06A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7651A9241A5DBB004FF06A /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		DB76518F2417C0E0004FF06A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB7651912417C0E0004FF06A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB7651A72418FA5A004FF06A /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		DB7651A9241A5DBB004FF06A /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +52,6 @@
 				8C9A87BF87ADD513156BC428 /* Pods-taskapp.debug.xcconfig */,
 				324A86B90E47B33A7E2EE82F /* Pods-taskapp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,6 +84,7 @@
 		DB7651822417C0DF004FF06A /* taskapp */ = {
 			isa = PBXGroup;
 			children = (
+				DB7651A9241A5DBB004FF06A /* Task.swift */,
 				DB7651832417C0DF004FF06A /* AppDelegate.swift */,
 				DB7651852417C0DF004FF06A /* SceneDelegate.swift */,
 				DB7651872417C0DF004FF06A /* ViewController.swift */,
@@ -212,6 +214,7 @@
 			files = (
 				DB7651882417C0DF004FF06A /* ViewController.swift in Sources */,
 				DB7651842417C0DF004FF06A /* AppDelegate.swift in Sources */,
+				DB7651AA241A5DBB004FF06A /* Task.swift in Sources */,
 				DB7651862417C0DF004FF06A /* SceneDelegate.swift in Sources */,
 				DB7651A82418FA5A004FF06A /* InputViewController.swift in Sources */,
 			);
