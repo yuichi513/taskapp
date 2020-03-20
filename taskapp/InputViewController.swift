@@ -10,13 +10,16 @@ import UIKit
 import RealmSwift
 import UserNotifications
 
-class InputViewController: UIViewController {
+class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var contentsTextView: UITextView!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var categorySelecter: UIPickerView!
+    @IBOutlet weak var categoryLabel: UILabel!
     
     let realm = try! Realm()
     var task: Task!
+    var categoryList = ["仕事","家庭","遊び","その他"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,16 +29,37 @@ class InputViewController: UIViewController {
                let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
                self.view.addGestureRecognizer(tapGesture)
 
-               titleTextField.text = task.title
-               contentsTextView.text = task.contents
-               datePicker.date = task.date
+                titleTextField.text = task.title
+                contentsTextView.text = task.contents
+                datePicker.date = task.date
+                categorySelecter.dataSource = self
+                categorySelecter.delegate = self
+        
+                categoryLabel.text = self.task.category
            }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.categoryList.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.categoryList[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        categoryLabel.text = self.categoryList[row]
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
         try! realm.write {
             self.task.title = self.titleTextField.text!
             self.task.contents = self.contentsTextView.text
             self.task.date = self.datePicker.date
+            self.task.category = self.categoryLabel.text!
             self.realm.add(self.task, update: .modified)
         }
         
