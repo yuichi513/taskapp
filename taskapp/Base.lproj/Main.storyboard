@@ -56,15 +56,35 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="全表示" id="akA-5A-a1F"/>
+                        <barButtonItem title="全表示" id="akA-5A-a1F">
+                            <connections>
+                                <action selector="allCategory:" destination="BYZ-38-t0r" id="hr6-dj-TPw"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="vR6-NE-axV"/>
-                        <barButtonItem title="仕事" id="Rlw-Nn-bRU"/>
+                        <barButtonItem title="仕事" id="Rlw-Nn-bRU">
+                            <connections>
+                                <action selector="jobCategory:" destination="BYZ-38-t0r" id="WOK-Ii-Ql6"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="ysB-bQ-0PT"/>
-                        <barButtonItem title="家庭" id="IAt-gX-PfU"/>
+                        <barButtonItem title="家庭" id="IAt-gX-PfU">
+                            <connections>
+                                <action selector="homeCategory:" destination="BYZ-38-t0r" id="qwm-d8-p0B"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="UnL-ln-8Fd"/>
-                        <barButtonItem title="遊び" id="fxC-uM-tac"/>
+                        <barButtonItem title="遊び" id="fxC-uM-tac">
+                            <connections>
+                                <action selector="playCategory:" destination="BYZ-38-t0r" id="6BH-cb-7FU"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="BnW-fG-xFp"/>
-                        <barButtonItem title="その他" id="hJ7-sy-aKo"/>
+                        <barButtonItem title="その他" id="hJ7-sy-aKo">
+                            <connections>
+                                <action selector="otherCategory:" destination="BYZ-38-t0r" id="MVc-gv-rja"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="GjV-Ci-ZFa">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fkJ-tK-z27">
@@ -75,6 +95,11 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="allCategoryButton" destination="akA-5A-a1F" id="Tme-HY-GI1"/>
+                        <outlet property="homeCategoryButton" destination="IAt-gX-PfU" id="XLU-jj-btY"/>
+                        <outlet property="jobCategoryButton" destination="Rlw-Nn-bRU" id="k9Q-X6-hlb"/>
+                        <outlet property="otherCategoryButton" destination="hJ7-sy-aKo" id="Dry-Lv-jKM"/>
+                        <outlet property="playCategoryButton" destination="fxC-uM-tac" id="ts9-Bw-Wqp"/>
                         <outlet property="tableView" destination="ugh-vA-bU7" id="7n2-Rf-mxi"/>
                         <segue destination="deh-lH-919" kind="show" identifier="cellSegue" id="FUh-nV-LLO"/>
                     </connections>

@@ -14,6 +14,52 @@ class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var tableView: UITableView!
     
+    func categoryBottonsReset() {
+        allCategoryButton.tintColor = nil
+        jobCategoryButton.tintColor = nil
+        homeCategoryButton.tintColor = nil
+        playCategoryButton.tintColor = nil
+        otherCategoryButton.tintColor = nil
+    }
+    
+    
+    @IBOutlet weak var allCategoryButton: UIBarButtonItem!
+    @IBAction func allCategory(_ sender: Any) {
+    taskArray = realm.objects(Task.self).filter("category LIKE '*'")
+        tableView.reloadData()
+        categoryBottonsReset()
+        allCategoryButton.tintColor = UIColor.gray
+    }
+    @IBOutlet weak var jobCategoryButton: UIBarButtonItem!
+    @IBAction func jobCategory(_ sender: Any) {
+        taskArray = realm.objects(Task.self).filter("category = '仕事'")
+        tableView.reloadData()
+        categoryBottonsReset()
+        jobCategoryButton.tintColor = UIColor.gray
+    }
+    @IBOutlet weak var homeCategoryButton: UIBarButtonItem!
+    @IBAction func homeCategory(_ sender: Any) {
+        taskArray = realm.objects(Task.self).filter("category = '家庭'")
+        tableView.reloadData()
+        categoryBottonsReset()
+        homeCategoryButton.tintColor = UIColor.gray
+    }
+    @IBOutlet weak var playCategoryButton: UIBarButtonItem!
+    @IBAction func playCategory(_ sender: Any) {
+        taskArray = realm.objects(Task.self).filter("category = '遊び'")
+        tableView.reloadData()
+        categoryBottonsReset()
+        playCategoryButton.tintColor = UIColor.gray
+    }
+
+    @IBOutlet weak var otherCategoryButton: UIBarButtonItem!
+    @IBAction func otherCategory(_ sender: Any) {
+        taskArray = realm.objects(Task.self).filter("category = 'その他'")
+        tableView.reloadData()
+        categoryBottonsReset()
+        otherCategoryButton.tintColor = UIColor.gray
+    }
+    
     let realm = try! Realm()
     var taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true)
     
@@ -22,6 +68,7 @@ class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSour
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        allCategoryButton.tintColor = UIColor.gray
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return taskArray.count
